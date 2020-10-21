@@ -9,3 +9,10 @@ This web application is build using React in the frontend and Django in the back
 - npm start
 - open another terminal -> cd backend
 - python manage.py runserver
+
+## How does it work:
+- on the sketchfield draw any digit between o to 9.
+- press the classify button
+- result will be displayed on the screen.
+
+![Project Image](https://github.com/shreenath2001/digit-recognition-webapp/blob/main/backend/media/images/digit_recognizer.png)
