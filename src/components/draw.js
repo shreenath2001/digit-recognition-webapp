@@ -55,7 +55,7 @@ const Draw = () => {
         const fd = new FormData()
         fd.append('image', c)
 
-        axios.post('http://digit-recognizer-webapp.herokuapp.com/api/digits/', fd, {headers:headers})
+        axios.post('http://localhost:8000/api/digits/', fd, {headers:headers})
         .then(res=>{
             getImageResult(res.data.id)
         })
@@ -69,7 +69,7 @@ const Draw = () => {
         const fd = new FormData()
         fd.append('image', c)
 
-        axios.post('http://digit-recognizer-webapp.herokuapp.com/api/digits/', fd, {headers:headers})
+        axios.post('http://localhost:8000/api/digits/', fd, {headers:headers})
         .then(res=>{
             getImageResult(res.data.id)
         })
@@ -77,14 +77,13 @@ const Draw = () => {
     }
 
     const getImageResult = (id) => {
-        axios.get(`http://digit-recognizer-webapp.herokuapp.com/api/digits/${id}/`)
+        axios.get(`http://localhost:8000/api/digits/${id}/`)
         .then(res=>{
             setResult(res.data.result) // here result in res.data.id is the result column of table Digit.
         })
     }
 
-    return (
-
+    return(
         <React.Fragment>
 
             {result && <h1 style = {styles.result}>Result is {result}</h1>}
@@ -132,7 +131,6 @@ const Draw = () => {
             }
 
         </React.Fragment>
-
     )
 }
 
